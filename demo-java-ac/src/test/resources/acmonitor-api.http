@@ -1,0 +1,96 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+GET http://10.200.85.161:64320/ctl/start/java?dk=demo-java-ac-one-run
+Accept: application/json
+
+<> 2021-01-12T081039.200.json
+<> 2021-01-12T074756.404.html
+<> 2021-01-12T062045.404.html
+<> 2021-01-12T061854.404.html
+<> 2021-01-12T061832.404.html
+<> 2021-01-12T061227.404.html
+#Cache-Control: no-cache
+
+###
+
+GET http://10.200.85.161:64320/ctl/action/java?dk=demo-java-ac-resident&param=创世纪
+Accept: application/json
+
+{}
+
+<> 2021-01-12T090659.200.json
+<> 2021-01-12T081016.200.json
+<> 2021-01-12T080904.200.json
+<> 2021-01-12T080654.200.json
+<> 2021-01-12T075523.404.html
+
+###
+
+GET http://10.200.85.161:64320/mon/monitor?dk=demo-java-ac-resident
+
+<> 2021-01-12T090650.200.json
+<> 2021-01-12T080646.200.json
+<> 2021-01-12T075353.200.json
+<> 2021-01-12T074647.200.json
+<> 2021-01-12T074621.404.html
+
+###
+
+POST http://10.200.85.161:64320/ctl/create/java
+Content-Type: application/json
+
+{
+  "name": "demo-java-ac-one-run1",
+  "java.option": "-Xms256M -Xmx256M -server -XX:+UseParallelGC -XX:+UseParallelOldGC -XX:ParallelGCThreads=2 -Ddk.name=demo-java-ac-one-run",
+  "heartbeat.sec": "1",
+  "job.type": "java",
+  "job.idle.sec": "60",
+  "job.max.auto.restart.count": "0",
+  "job.classpath": "/home/dw_hbkal/dockers/demo-java-ac/conf:/home/dw_hbkal/dockers/demo-java-ac/lib/*",
+  "job.class": "com.lxt.demo.OneRunDemoMain",
+  "job.method.stop": "stop",
+  "job.method.start": "start",
+  "job.para.start": "老虎没打着",
+  "job.method.audit": "audit",
+  "job.method.check": "check",
+  "job.method.isSuicide": "isSuicide"
+}
+
+<> 2021-01-12T095453.200.json
+<> 2021-01-12T095421.200.json
+<> 2021-01-12T095205.200.json
+<> 2021-01-12T091401.200.json
+<> 2021-01-12T091224.200.json
+<> 2021-01-12T091131.200.json
+<> 2021-01-12T090917.200.json
+<> 2021-01-12T090710.200.json
+<> 2021-01-12T081628.200.json
+
+
+
+###
+POST http://10.200.85.161:64320/ctl/start/java
+#Content-Type: application/x-www-form-urlencoded
+
+demo-java-ac-one-run
+
+<> 2021-01-12T095349.200.json
+<> 2021-01-12T095131.200.json
+<> 2021-01-12T093043.200.json
+<> 2021-01-12T093015.200.json
+
+###
+POST http://10.200.85.161:64320/ctl/stop/java
+
+demo-java-ac-one-run
+
+<> 2021-01-12T095354.200.json
+<> 2021-01-12T093121.200.json
+
+###
+

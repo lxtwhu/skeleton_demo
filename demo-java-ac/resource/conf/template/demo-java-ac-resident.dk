@@ -1,0 +1,16 @@
+{
+        "name":"demo-java-ac-resident",
+        "java.option":"-Xms256M -Xmx256M -server -XX:+UseParallelGC -XX:+UseParallelOldGC -XX:ParallelGCThreads=2 -Ddk.name=demo-java-ac-resident",
+        "heartbeat.sec":"1",
+        "job.type":"java",
+        "job.idle.sec":"60",
+        "job.max.auto.restart.count":"0",
+        "job.classpath":"@{MODULE_DEPLOY_HOME}/conf:@{MODULE_DEPLOY_HOME}/lib/*",
+        "job.class":"com.lxt.demo.ResidentDemoMain",
+        "job.method.stop":"stop",
+        "job.method.start":"start",
+        "job.method.audit":"audit",
+        "job.method.check":"check",
+        "job.method.action":"action",
+        "job.method.isSuicide":"isSuicide"
+}

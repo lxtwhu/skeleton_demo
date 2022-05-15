@@ -1,0 +1,16 @@
+{
+        "name":"demo-java-ac-one-run",
+        "java.option":"-Xms256M -Xmx256M -server -XX:+UseParallelGC -XX:+UseParallelOldGC -XX:ParallelGCThreads=2 -Ddk.name=demo-java-ac-one-run",
+        "heartbeat.sec":"1",
+        "job.type":"java",
+        "job.idle.sec":"60",
+        "job.max.auto.restart.count":"0",
+        "job.classpath":"@{MODULE_DEPLOY_HOME}/conf:@{MODULE_DEPLOY_HOME}/lib/*",
+        "job.class":"com.lxt.demo.OneRunDemoMain",
+        "job.method.stop":"stop",
+        "job.method.start":"start",
+        "job.para.start":"上山打老虎",
+        "job.method.audit":"audit",
+        "job.method.check":"check",
+        "job.method.isSuicide":"isSuicide"
+}

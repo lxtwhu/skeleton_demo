@@ -1,0 +1,8 @@
+# 生产测试环境配置，用于AC模板生成，或通用代理配置生成. 须在主机环境变量中配置：ENV_TYPE=PT
+ENV_TYPE=PT
+PLACEHOLDER=@
+
+GREETING=hello from PT
+
+ZDOGS_SERVER_IP=
+ZDOGS_SERVER_PORT=5000

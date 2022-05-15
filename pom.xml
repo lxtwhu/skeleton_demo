@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+<!--组名，须为 com.lxt-->
+    <groupId>com.lxt</groupId>
+<!--父项目名，对应于一个 bugzilla名-->
+    <artifactId>skeleton_demo</artifactId>
+<!--版本号，参照maven规范-->
+    <version>1.0.0</version>
+<!--项目类型，父项目须为pom类型-->
+    <packaging>pom</packaging>
+<!--这个父是必须的, 是室内规范实现的前提, 提供通用的项目能力-->
+    <parent>
+        <groupId>com.lxt</groupId>
+        <artifactId>skeleton</artifactId>
+        <version>1.0.0</version>
+    </parent>
+<!--一些公共的变量-->
+    <properties>
+        <version.common-dependencies>1.0.0</version.common-dependencies>
+<!--项目包装工具，如需升级版本，可设置；默认版本在skeleton项目中可见-->
+<!--        <version.publish-wrapper/>-->
+<!--AC，如需升级版本，可设置；默认版本在skeleton项目中可见-->
+<!--        <version.activity_container/>-->
+<!--AC MONITOR插件，如需升级版本，可设置；默认版本在skeleton项目中可见-->
+<!--        <version.acplg-monitor/>-->
+    </properties>
+<!--一些公关的依赖管理-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.lxt</groupId>
+                <artifactId>common-dependencies</artifactId>
+                <version>${version.common-dependencies}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+<!--子模块管理：若只需编译部分模块，宜使用 -pl -am等参数，无需在此增删-->
+  <modules>
+    <module>demo-java-ac</module>
+    <module>demo-java-static</module>
+    <module>demo-java-upjas</module>
+    <module>demo-resource-static</module>
+    <module>demo-local-component</module>
+    <module>demo-resource-no-setup</module>
+    <module>demo-fat-jar-no-setup</module>
+    <module>demo-lxk-app</module>
+      <!--打包聚合模块 build必须放在最后-->
+    <module>build</module>
+  </modules>
+</project>
